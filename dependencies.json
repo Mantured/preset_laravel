@@ -1,0 +1,36 @@
+{
+  "packages": {
+    "laravel-breeze": {
+      "description": "Laravel Breeze - Authentication Scaffolding",
+      "install_command": "composer require laravel/breeze --dev && php artisan breeze:install"
+    },
+    "spatie-laravel-permission": {
+      "description": "Spatie Laravel Permission - Role & Permission Management",
+      "install_command": "composer require spatie/laravel-permission"
+    },
+    "livewire": {
+      "description": "Livewire - Full-stack framework for Laravel",
+      "install_command": "composer require livewire/livewire"
+    },
+    "laravel-debugbar": {
+      "description": "Laravel Debugbar - Debugging tool",
+      "install_command": "composer require barryvdh/laravel-debugbar --dev"
+    },
+    "wire-elements-modal": {
+      "description": "Wire Elements Modal - Modal components for Livewire",
+      "install_command": "composer require wire-elements/modal"
+    },
+    "eloquent-blameable": {
+      "description": "Eloquent Blameable - Automatically set blameable fields on models",
+      "install_command": "composer require richan-fongdasen/eloquent-blameable"
+    },
+    "laravel-medialibrary": {
+      "description": "Laravel Medialibrary - Manage media files in Laravel",
+      "install_command": "composer require spatie/laravel-medialibrary"
+    },
+    "livewire-dropzone": {
+      "description": "Livewire Dropzone - File uploads via Livewire",
+      "install_command": "composer require dasundev/livewire-dropzone"
+    }
+  }
+}
