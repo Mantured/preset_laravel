@@ -1,36 +1,65 @@
 {
-  "packages": {
-    "laravel-breeze": {
-      "description": "Laravel Breeze - Authentication Scaffolding",
-      "install_command": "composer require laravel/breeze --dev && php artisan breeze:install"
-    },
-    "spatie-laravel-permission": {
-      "description": "Spatie Laravel Permission - Role & Permission Management",
-      "install_command": "composer require spatie/laravel-permission"
-    },
-    "livewire": {
-      "description": "Livewire - Full-stack framework for Laravel",
-      "install_command": "composer require livewire/livewire"
-    },
-    "laravel-debugbar": {
-      "description": "Laravel Debugbar - Debugging tool",
-      "install_command": "composer require barryvdh/laravel-debugbar --dev"
-    },
-    "wire-elements-modal": {
-      "description": "Wire Elements Modal - Modal components for Livewire",
-      "install_command": "composer require wire-elements/modal"
-    },
-    "eloquent-blameable": {
-      "description": "Eloquent Blameable - Automatically set blameable fields on models",
-      "install_command": "composer require richan-fongdasen/eloquent-blameable"
-    },
-    "laravel-medialibrary": {
-      "description": "Laravel Medialibrary - Manage media files in Laravel",
-      "install_command": "composer require spatie/laravel-medialibrary"
-    },
-    "livewire-dropzone": {
-      "description": "Livewire Dropzone - File uploads via Livewire",
-      "install_command": "composer require dasundev/livewire-dropzone"
-    }
-  }
+    "packages": [
+        {
+            "name": "Laravel Breeze",
+            "repository": "laravel/breeze",
+            "post_install": [
+                "php artisan breeze:install",
+                "php artisan migrate"
+            ]
+        },
+        {
+            "name": "Spatie Laravel Permission",
+            "repository": "spatie/laravel-permission",
+            "post_install": [
+                "php artisan vendor:publish --provider='Spatie\Permission\PermissionServiceProvider'",
+                "php artisan migrate"
+            ]
+        },
+        {
+            "name": "Livewire",
+            "repository": "livewire/livewire",
+            "version": "^3.0",
+            "post_install": [
+                "php artisan vendor:publish --tag=config"
+            ]
+        },
+        {
+            "name": "Laravel Debugbar",
+            "repository": "barryvdh/laravel-debugbar",
+            "version": "^3.0",
+            "post_install": [
+                "php artisan vendor:publish --provider='Barryvdh\Debugbar\ServiceProvider'"
+            ]
+        },
+        {
+            "name": "Wire-elements Modal",
+            "repository": "wire-elements/modal",
+            "post_install": [
+                "php artisan vendor:publish --tag=config"
+            ]
+        },
+        {
+            "name": "Eloquent Blameable",
+            "repository": "richan-fongdasen/eloquent-blameable",
+            "post_install": [
+                "php artisan vendor:publish --tag=config"
+            ]
+        },
+        {
+            "name": "Laravel Medialibrary",
+            "repository": "spatie/laravel-medialibrary",
+            "post_install": [
+                "php artisan vendor:publish --provider='Spatie\MediaLibrary\MediaLibraryServiceProvider'",
+                "php artisan migrate"
+            ]
+        },
+        {
+            "name": "Livewire Dropzone",
+            "repository": "dasundev/livewire-dropzone",
+            "post_install": [
+                "php artisan vendor:publish --tag=config"
+            ]
+        }
+    ]
 }
